@@ -1,0 +1,161 @@
+//<FORM (a.f+tab)>====================================================================================================
+.form-row {
+	@include flexbox();
+	margin: 0px -15px;
+}
+
+.form__column {
+	padding: 0px 15px;
+}
+
+.form-input {}
+
+.form-button {}
+
+//</FORM>====================================================================================================
+
+//<BUTTONS (a.btn+tab)>====================================================================================================
+.btn {
+	display: inline-block;
+	height: 50px;
+	padding: 0px 41px;
+	background-color: $color_red;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 50px;
+	font-weight: 400;
+	border-radius: 25px;
+	text-transform: uppercase;
+	position: relative;
+
+	&:hover {
+		@include anim(0.7s, 0s);
+		background: #d92e11;
+	}
+
+	&.fw {
+		width: 100%;
+	}
+
+	span {
+		position: relative;
+		z-index: 1;
+	}
+
+	&-g,
+	&-r,
+	&-p {
+		background: #fff;
+	}
+
+	&-g {
+		color: $color_green;
+		border: 2px solid $color_green;
+
+		&:hover {
+			background: $color_green;
+			color: #fff;
+		}
+	}
+
+	&-r {
+		color: $color_red;
+		border: 2px solid $color_red;
+
+		&:hover {
+			background: $color_red;
+			color: #fff;
+		}
+	}
+
+	&-p {
+		color: $color_purple;
+		border: 2px solid $color_purple;
+
+		&:hover {
+			background: $color_purple;
+			color: #fff;
+		}
+	}
+
+	&-h {
+		border-radius: 0px 25px 25px 0px;
+	}
+
+	@media (max-width:$md3+px) {
+		@include flexbox();
+		margin: 0px 10px;
+		justify-content: center;
+		align-items: center;
+		line-height: 18px;
+		font-size: 14px;
+
+		&-h {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+
+	@media (max-width:$md4+px) {
+		&-h {
+			border-radius: 25px;
+			margin: 10px 0px 0px 0px;
+		}
+	}
+}
+
+//</BUTTONS>====================================================================================================
+
+//<INPUT (inp+tab)>====================================================================================================
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.input {
+	width: 100%;
+	height: 50px;
+	display: block;
+	padding: 0px 20px;
+	border-radius: 4px;
+	background: #fff;
+	color: #616161;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 80px;
+	text-align: center;
+
+	&-sub {
+		width: 300px;
+		border: 2px solid #efefef;
+		border-radius: 25px 0px 0px 25px;
+		background-color: #f7f7f7;
+		text-align: left;
+	}
+
+	&.focus {
+		border: 2px solid #b27cf5;
+	}
+
+	&.err {
+		border: 2px solid red;
+	}
+
+	@media (max-width:$md4+px) {
+		&-sub {
+			border-radius: 25px;
+			width: 100%;
+		}
+	}
+}
+
+textarea.input {
+	resize: none;
+	height: 200px;
+	padding: 0px 0px;
+}
+
+//</INPUT>====================================================================================================
